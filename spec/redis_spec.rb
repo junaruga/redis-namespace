@@ -343,7 +343,7 @@ describe "redis" do
   end
 
   it 'should not add namespace to disconnect!' do
-    expect(@redis).to receive(:disconnect!).with().and_call_original
+    expect(@redis).to receive(:disconnect!).with(no_args).and_call_original
 
     expect(@namespaced.disconnect!).to be nil
   end
